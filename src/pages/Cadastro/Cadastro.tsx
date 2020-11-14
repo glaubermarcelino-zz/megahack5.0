@@ -12,6 +12,7 @@ import {
 import {RectButton} from 'react-native-gesture-handler';
 import {Container, Title} from './styles';
 import {FloatingLabelInput} from '../../components/FloatingLabelInput/index';
+import {useNavigation} from '@react-navigation/native';
 
 import {withFormik} from 'formik';
 
@@ -19,6 +20,14 @@ const Cadastro = (props: any) => {
   const [state, setState] = useState({value: ''});
   function handleNavigateToPoint() {}
   const handleTextChange = (newText: any) => setState({value: newText});
+
+  const navigation = useNavigation();
+  function handleNavigateToLogin() {
+    navigation.navigate('Login');
+  }
+  function handleNavigateToAtivacao() {
+    navigation.navigate('Ativacao');
+  }
 
   return (
     <Container>
@@ -88,7 +97,12 @@ const Cadastro = (props: any) => {
                 }}
               />
             </View> */}
-            <RectButton style={styles.button} onPress={props.handleSubmit}>
+            <RectButton 
+            style={styles.button} 
+            onPress={() => handleNavigateToAtivacao()}
+            
+            // onPress={props.handleSubmit}
+            >
               <Text style={styles.buttonText}>Continuar</Text>
             </RectButton>
             <View style={styles.criarConta}>
@@ -96,7 +110,7 @@ const Cadastro = (props: any) => {
                 Já possui conta?
               </Text>
               <TouchableOpacity
-                onPress={() => Linking.openURL('http://google.com')}>
+                onPress={() => handleNavigateToLogin()}>
                 <Text style={{color: '#FE6C6D', fontSize: 16}}> Entrar</Text>
               </TouchableOpacity>
             </View>

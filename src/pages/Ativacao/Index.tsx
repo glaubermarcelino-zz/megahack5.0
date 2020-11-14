@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import {
   View,
   Image,
@@ -11,9 +11,16 @@ import {
 } from 'react-native';
 import {RectButton} from 'react-native-gesture-handler';
 import {withFormik} from 'formik';
-import {Container, Title} from './styles';
+import { Title} from './styles';
+import {useNavigation} from '@react-navigation/native';
+
 
 const Ativacao: React.FC = (props: any) => {
+  const navigation = useNavigation();
+  function handleNavigateToSucesso() {
+    navigation.navigate('Sucesso');
+  }
+
   //Oculta a barra de status
   StatusBar.setHidden(true);
   return (
@@ -75,42 +82,47 @@ const Ativacao: React.FC = (props: any) => {
           <TextInput
             style={styles.codigoVerificacao6}
             value={props.values.codigo1}
+            maxLength={1}
             onChangeText={(text) => props.setFieldValue('codigo1', text)}
           />
           <TextInput
             style={styles.codigoVerificacao6}
             value={props.values.codigo2}
+            maxLength={1}
             onChangeText={(text) => props.setFieldValue('codigo2', text)}
           />
           <TextInput
             style={styles.codigoVerificacao6}
             value={props.values.codigo3}
+            maxLength={1}
             onChangeText={(text) => props.setFieldValue('codigo3', text)}
           />
           <TextInput
             style={styles.codigoVerificacao6}
             value={props.values.codigo4}
+            maxLength={1}
             onChangeText={(text) => props.setFieldValue('codigo4', text)}
           />
           <TextInput
             style={styles.codigoVerificacao6}
             value={props.values.codigo5}
+            maxLength={1}
             onChangeText={(text) => props.setFieldValue('codigo5', text)}
           />
           <TextInput
             style={styles.codigoVerificacao6}
             value={props.values.codigo6}
+            maxLength={1}
             onChangeText={(text) => props.setFieldValue('codigo6', text)}
           />
         </View>
 
-        <TextInput
-          style={styles.input}
-          value={props.values.codigo}
-          onChangeText={(text) => props.setFieldValue('codigo', text)}
-        />
         <View style={styles.buttonSection}>
-          <RectButton style={styles.button} onPress={props.handleSubmit}>
+          <RectButton 
+          style={styles.button} 
+          // onPress={props.handleSubmit}
+          onPress={() => handleNavigateToSucesso()}
+          >
             <Text style={styles.buttonText}>Próximo</Text>
           </RectButton>
         </View>
@@ -137,7 +149,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     justifyContent: 'center',
-    alignItems:'center',
+    alignItems: 'center',
     padding: 10,
     height: '100%',
   },
@@ -150,11 +162,11 @@ const styles = StyleSheet.create({
     padding: 0,
     marginLeft: 10,
   },
-  buttonSection:{
+  buttonSection: {
     width: '100%',
     height: '30%',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   content: {
     flexDirection: 'row',
@@ -188,7 +200,6 @@ const styles = StyleSheet.create({
     paddingTop: 0,
   },
   avisoSenha: {fontSize: 16, color: '#FFEEE5', marginBottom: 10},
-  submit: {},
   button: {
     backgroundColor: '#FE6C6D',
     height: 50,
@@ -210,7 +221,14 @@ const styles = StyleSheet.create({
   },
 });
 export default withFormik({
-  mapPropsToValues: () => ({codigo: ''}),
+  mapPropsToValues: () => ({
+    codigo1: '',
+    codigo2: '',
+    codigo3: '',
+    codigo4: '',
+    codigo5: '',
+    codigo6: '',
+  }),
 
   handleSubmit: (values) => {
     console.log(values);

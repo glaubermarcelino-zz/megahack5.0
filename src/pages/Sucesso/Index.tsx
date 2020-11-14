@@ -7,8 +7,14 @@ import {
   StatusBar,
 } from 'react-native';
 import {RectButton} from 'react-native-gesture-handler';
+import {useNavigation} from '@react-navigation/native';
 
 const Sucesso: React.FC = (props: any) => {
+  const navigation = useNavigation();
+  function handleNavigateToHome() {
+    navigation.navigate('Home');
+  }
+
   //Oculta a barra de status
   StatusBar.setHidden(true);
   return (
@@ -40,7 +46,11 @@ const Sucesso: React.FC = (props: any) => {
           </Text>
         </View>
         <View style={styles.buttonSection}>
-          <RectButton style={styles.button} onPress={props.handleSubmit}>
+          <RectButton 
+          style={styles.button} 
+          // onPress={props.handleSubmit}
+          onPress={() => handleNavigateToHome()}
+          >
             <Text style={styles.buttonText}>OK</Text>
           </RectButton>
         </View>

@@ -4,17 +4,23 @@ import {
   Image,
   Text,
   StyleSheet,
-  Linking,
   TouchableOpacity,
   TextInput,
 } from 'react-native';
 import {RectButton} from 'react-native-gesture-handler';
 import {Container, Title} from './styles';
+import {useNavigation} from '@react-navigation/native';
 
 import {withFormik} from 'formik';
 
 const Login = (props: any) => {
-  function handleNavigateToPoint() {}
+  const navigation = useNavigation();
+  function handleNavigateToNewAccount() {
+    navigation.navigate('Cadastro');
+  }
+  function handleNavigateToHome() {
+    navigation.navigate('Home');
+  }
 
   return (
     <Container>
@@ -34,20 +40,25 @@ const Login = (props: any) => {
             />
             <Text style={styles.label}>Senha:</Text>
             <TextInput
+              keyboardType="visible-password"
               style={styles.input}
               value={props.values.senha}
               onChangeText={(text) => props.setFieldValue('senha', text)}
             />
             <Text style={styles.avisoSenha}>Esqueceu sua senha?</Text>
-            <RectButton style={styles.button} onPress={props.handleSubmit}>
+            <RectButton
+              style={styles.button}
+              // onPress={props.handleSubmit}
+              onPress={() => handleNavigateToHome()}>
               <Text style={styles.buttonText}>Continuar</Text>
             </RectButton>
             <View style={styles.criarConta}>
-              <TouchableOpacity
-                onPress={() => Linking.openURL('http://google.com')}>
-                <Text style={{fontSize: 16, color: '#FFEEE5'}}>Novo?</Text>
-                <Text style={{color: '#FE6C6D', fontSize: 16}}>
-                  Crie uma conta agora
+              <TouchableOpacity onPress={() => handleNavigateToNewAccount()}>
+                <Text style={{fontSize: 16, color: '#FFEEE5'}}>
+                  Novo ?
+                  <Text style={{color: '#FE6C6D', fontSize: 16,marginLeft:2}}>
+                    Crie uma conta agora
+                  </Text>
                 </Text>
               </TouchableOpacity>
             </View>
