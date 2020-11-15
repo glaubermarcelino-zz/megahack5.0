@@ -3,13 +3,16 @@ import {View, Image, StyleSheet} from 'react-native';
 import {StatusBar} from 'react-native';
 
 import {Container} from './styles';
+import {useNavigation} from '@react-navigation/native'
 
 export default class Splash extends React.Component {
   constructor(props:any) {
     super(props);
     setTimeout(() => {
-      this.props.navigation.navigate('Login');
-    }, 5000);
+      const navigation = useNavigation();
+      // this.props.navigation.navigate('Login');
+      navigation.navigate('Login')
+    }, 8000);
   }
 
   render() {

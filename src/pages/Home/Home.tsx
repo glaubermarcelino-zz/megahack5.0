@@ -14,6 +14,7 @@ import GeneralStatusBarColor from '../../components/StatusbarColor/Index';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 // import {useNavigation} from '@react-navigation/native';
 import FeatherIcon from 'react-native-vector-icons/Feather';
+import Header from '../../components/Header/Index';
 
 const Home = () => {
   const [selectedItems, setselectedItems] = useState<number[]>([]);
@@ -33,27 +34,7 @@ const Home = () => {
           backgroundColor="#305F95"
           barStyle="light-content"
         />
-        <View style={styles.container}>
-          <View
-            style={{
-              backgroundColor: '#305F95',
-              height: 60,
-              justifyContent: 'space-between',
-              alignContent: 'center',
-              alignItems: 'center',
-              padding: 5,
-              flexDirection: 'row',
-            }}>
-            <Text style={{color: '#fff', fontSize: 16}}>
-              Olá, Confeitaria Marisa
-            </Text>
-            <Image
-              style={styles.logo}
-              source={require('../../assets/images/linker-plus94x40.png')}
-            />
-          </View>
-          <View style={{backgroundColor: '#FE6C6D', height: 9}} />
-        </View>
+        <Header titulo={"Olá, Confeitaria Marisa"}/>
       </View>
       <SafeAreaView>
         <TouchableOpacity onPress={handleNavigateBack}>

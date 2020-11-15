@@ -13,6 +13,7 @@ import {useNavigation} from '@react-navigation/native';
 
 import {withFormik} from 'formik';
 
+
 const Login = (props: any) => {
   const navigation = useNavigation();
   function handleNavigateToNewAccount() {
@@ -48,8 +49,8 @@ const Login = (props: any) => {
             <Text style={styles.avisoSenha}>Esqueceu sua senha?</Text>
             <RectButton
               style={styles.button}
-              // onPress={props.handleSubmit}
-              onPress={() => handleNavigateToHome()}>
+              onPress={props.handleSubmit}>
+               {/* onPress={() => handleNavigateToHome()}> */}
               <Text style={styles.buttonText}>Continuar</Text>
             </RectButton>
             <View style={styles.criarConta}>
@@ -136,6 +137,7 @@ export default withFormik({
   mapPropsToValues: () => ({cnpj: '', senha: ''}),
 
   handleSubmit: (values) => {
+    // navigation.navigate('Home');
     console.log(values);
   },
 })(Login);
