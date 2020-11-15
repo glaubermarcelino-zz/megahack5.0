@@ -22,6 +22,25 @@
 <p align="center"> <img src="https://github.com/glaubermarcelino/megahack5.0/blob/main/screens/Linker%2B.gif?raw=true" alt="Linker+" /> </p>
 
 
+### `Clone this project`
+git clone https://github.com/glaubermarcelino/megahack5.0.git
+
+### `Change folder this project`
+cd ./megahack5.0
+
+In the project directory, you can run:
+
+### `npm install`
+
+Para instalar todas as dependencias do projeto
+
+### `Run in Android`
+react-native run-android
+
+### `Run in iOS`
+react-native run-ios
+
+Para executar o projeto.
 
 Nos links abaixo você encontra o layout do projeto web e também do mobile. Lembrando que você precisa ter uma conta no [Figma](http://figma.com/) para ver todos os detalhes.
 
