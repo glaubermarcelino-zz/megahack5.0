@@ -6,15 +6,17 @@
 <p align="center">
   <img alt="Tamanho do repositório" src="https://img.shields.io/github/repo-size/glaubermarcelino/megahack5.0">
   
-  <a href="https://www.instagram.com/ian_1408/">
+  <a href="https://www.instagram.com/mrglauber/">
     <img alt="Feito por Glauber Marcelino da Silva" src="https://img.shields.io/badge/made%20by-Glauber%20Marcelino-%2304D361">
+  <img alt="Feito por Flávia Firmino" src="https://img.shields.io/badge/made%20by-Flavia%20Firmino-%2304D361">
+  <img alt="Feito por Vanessa Sousa" src="https://img.shields.io/badge/made%20by-Vanessa%20Sousa-%2304D361">
   </a>
   
-  <a href="https://github.com/IanTorquato/Happy-Rocketseat-NLW/search?l=typescript">
+  <a href="https://github.com/glaubermarcelino/megahack5.0/search?l=typescript">
     <img alt="Quantidade de linguagens" src="https://img.shields.io/github/languages/count/glaubermarcelino/megahack5.0">
   </a>
   
-  <a href="https://github.com/IanTorquato/Happy-Rocketseat-NLW/stargazers">
+  <a href="https://github.com/glaubermarcelino/megahack5.0/stargazers">
     <img alt="Stargazers" src="https://img.shields.io/github/stars/glaubermarcelino/megahack5.0">
   </a>
 </p>
@@ -46,4 +48,4 @@ Nos links abaixo você encontra o layout do projeto web e também do mobile. Lem
 
 - [Layout Mobile](https://www.figma.com/file/ejbKSMUcwOMK1WVxoSLofy/Linker---%23somosn%C3%B3s-(Copy)?node-id=1%3A428)
 
-Feito com ♥ by <strong>Glauber Marcelino</strong>
+Feito com ♥ by <strong><a href="https://www.linkedin.com/in/gtstecnologia/">Glauber Marcelino, </a></strong> <strong><a href="https://www.linkedin.com/in/flaviafirmino/">Flavia Firmino, </a></strong> <strong><a href="https://www.linkedin.com/in/vanessa-sousa-9a195386/">Vanessa Sousa</a></strong>
