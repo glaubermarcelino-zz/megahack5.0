@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -9,27 +9,21 @@ import {
   Text,
   Alert,
 } from 'react-native';
-// import { SvgUri } from "react-native-svg";
 import GeneralStatusBarColor from '../../components/StatusbarColor/Index';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
-// import {useNavigation} from '@react-navigation/native';
-import FeatherIcon from 'react-native-vector-icons/Feather';
+import {Icon} from 'react-native-elements';
 import Header from '../../components/Header/Index';
 
 const Pagamentos = () => {
-  const [selectedItems, setselectedItems] = useState<number[]>([]);
-  // const navigation = useNavigation();
-
   function handleNavigateBack() {
     Alert.alert('Oooops...', 'Funcionalidade de retorno acionada');
   }
   function handleNavigate() {
-    Alert.alert('Oooops...', 'Funcionalidade de Navegação acionada');
+    Alert.alert('Oooops...', 'Funcionalidade de retorno acionada');
   }
-
   return (
     <>
-      <View style={{flex: 1}}>
+      <View>
         <GeneralStatusBarColor
           backgroundColor="#305F95"
           barStyle="light-content"
@@ -37,96 +31,97 @@ const Pagamentos = () => {
         <Header titulo={'Olá, Confeitaria Marisa'} />
       </View>
       <SafeAreaView>
-        <TouchableOpacity onPress={handleNavigateBack}>
-          <FeatherIcon name="arrow-left" size={20} color="#34cb79" />
+        <TouchableOpacity
+          onPress={() => handleNavigateBack()}
+          style={{alignItems: 'flex-start', justifyContent: 'center'}}>
+          <Text style={{fontSize: 16, color: '#305F95', fontWeight: 'bold'}}>
+            <Icon name="g-translate" color="#00aced" />
+            Pagamentos
+          </Text>
         </TouchableOpacity>
         <ScrollView
           contentInsetAdjustmentBehavior="automatic"
           style={styles.scrollView}>
           <View style={styles.servicos}>
-            <View style={{overflow: 'hidden', paddingBottom: 5}}>
-              <View
-                style={{
-                  backgroundColor: '#fff',
-                  width: 300,
-                  height: 60,
-                  shadowColor: '#000',
-                  shadowOffset: {width: 1, height: 1},
-                  shadowOpacity: 0.4,
-                  shadowRadius: 3,
-                  elevation: 5,
-                }}
-              />
+            <View
+              style={{
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignContent: 'center',
+              }}>
+              <TouchableOpacity
+                style={[styles.item]}
+                onPress={() => handleNavigate()}
+                activeOpacity={0.6}>
+                <View
+                  style={{
+                    justifyContent: 'flex-end',
+                    alignContent: 'flex-end',
+                    flexDirection: 'row',
+                    width: '100%',
+                  }}>
+                  <Image source={require('../../assets/icons/dda.png')} />
+                </View>
+                <Text style={styles.itemTitle}>DDA Boletos</Text>
+              </TouchableOpacity>
+              <View style={{overflow: 'hidden', paddingBottom: 2}}>
+                <TouchableOpacity
+                  style={[styles.item]}
+                  onPress={() => handleNavigate()}
+                  activeOpacity={0.6}>
+                  <View
+                    style={{
+                      justifyContent: 'flex-end',
+                      alignContent: 'flex-end',
+                      flexDirection: 'row',
+                      width: '100%',
+                    }}>
+                    <Image
+                      source={require('../../assets/icons/leitor.png')}
+                    />
+                  </View>
+                  <Text style={styles.itemTitle}>Pagar com Leitor</Text>
+                </TouchableOpacity>
+              </View>
             </View>
-            <View style={{overflow: 'hidden', paddingBottom: 5}}>
-              <View
-                style={{
-                  backgroundColor: '#fff',
-                  width: 300,
-                  height: 60,
-                  shadowColor: '#000',
-                  shadowOffset: {width: 1, height: 1},
-                  shadowOpacity: 0.4,
-                  shadowRadius: 3,
-                  elevation: 5,
-                }}
-              />
-            </View>
-            <View style={{overflow: 'hidden', paddingBottom: 5}}>
-              <View
-                style={{
-                  backgroundColor: '#fff',
-                  width: 300,
-                  height: 60,
-                  shadowColor: '#000',
-                  shadowOffset: {width: 1, height: 1},
-                  shadowOpacity: 0.4,
-                  shadowRadius: 3,
-                  elevation: 5,
-                }}
-              />
-            </View>
-            <View style={{overflow: 'hidden', paddingBottom: 5}}>
-              <View
-                style={{
-                  backgroundColor: '#fff',
-                  width: 300,
-                  height: 60,
-                  shadowColor: '#000',
-                  shadowOffset: {width: 1, height: 1},
-                  shadowOpacity: 0.4,
-                  shadowRadius: 3,
-                  elevation: 5,
-                }}
-              />
-            </View>
-            <View style={{overflow: 'hidden', paddingBottom: 5}}>
-              <View
-                style={{
-                  backgroundColor: '#fff',
-                  width: 300,
-                  height: 60,
-                  shadowColor: '#000',
-                  shadowOffset: {width: 1, height: 1},
-                  shadowOpacity: 0.4,
-                  shadowRadius: 3,
-                  elevation: 5,
-                }}
-              />
-            </View>
-            <View style={{overflow: 'hidden', paddingBottom: 5}}>
-              <View
-                style={{
-                  backgroundColor: '#fff',
-                  width: 300,
-                  height: 60,
-                  shadowColor: '#000',
-                  shadowOffset: {width: 1, height: 1},
-                  shadowOpacity: 0.4,
-                  shadowRadius: 3,
-                  elevation: 5,
-                }}
-              />
+            <View
+              style={{
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignContent: 'center',
+              }}>
+              <TouchableOpacity
+                style={[styles.item]}
+                onPress={() => handleNavigate()}
+                activeOpacity={0.6}>
+                <View
+                  style={{
+                    justifyContent: 'flex-end',
+                    alignContent: 'flex-end',
+                    flexDirection: 'row',
+                    width: '100%',
+                  }}>
+                  <Image source={require('../../assets/icons/folhapagamento.png')} />
+                </View>
+                <Text style={styles.itemTitle}>Folha de Pagamento</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={[styles.item]}
+                onPress={() => handleNavigate()}
+                activeOpacity={0.6}>
+                <View
+                  style={{
+                    justifyContent: 'flex-end',
+                    alignContent: 'flex-end',
+                    flexDirection: 'row',
+                    width: '100%',
+                  }}>
+                  <Image
+                    source={require('../../assets/icons/digitarcodigo.png')}
+                  />
+                </View>
+                <Text style={styles.itemTitle}>Digitar Código</Text>
+              </TouchableOpacity>
             </View>
           </View>
         </ScrollView>
@@ -139,9 +134,31 @@ const styles = StyleSheet.create({
   scrollView: {
     backgroundColor: Colors.lighter,
   },
+  item: {
+    backgroundColor: '#fff',
+    borderWidth: 1,
+    borderColor: '#305F95',
+    height: 90,
+    width: 147,
+    borderRadius: 8,
+    paddingTop: 20,
+    margin: 10,
+    alignItems: 'flex-start',
+    justifyContent: 'space-between',
+    textAlign: 'center',
+    shadowColor: '#000',
+    shadowOffset: {width: 1, height: 1},
+    shadowOpacity: 0.4,
+    shadowRadius: 3,
+    elevation: 10,
+    paddingHorizontal: 10,
+    paddingVertical: 15,
+    flexDirection: 'column',
+  },
   servicos: {
     justifyContent: 'center',
     flexDirection: 'row',
+    backgroundColor: '#fff',
   },
   engine: {
     position: 'absolute',
@@ -180,106 +197,6 @@ const styles = StyleSheet.create({
     width: 94,
     height: 40,
   },
-  item: {
-    backgroundColor: '#fff',
-    borderWidth: 1,
-    borderColor: '#305F95',
-    height: 90,
-    width: 147,
-    borderRadius: 8,
-    paddingTop: 20,
-    margin: 10,
-    alignItems: 'center',
-    justifyContent: 'center',
-    textAlign: 'center',
-    shadowColor: '#000',
-    shadowOpacity: 0.8,
-    shadowRadius: 2,
-    shadowOffset: {
-      height: 1,
-      width: 1,
-    },
-  },
-  itemSaldoDisponivel: {
-    backgroundColor: '#305F95',
-    borderWidth: 1,
-    borderColor: '#305F95',
-    height: 90,
-    width: 147,
-    borderRadius: 8,
-    paddingTop: 20,
-    margin: 10,
-    alignItems: 'center',
-    justifyContent: 'center',
-    textAlign: 'center',
-    shadowColor: '#000',
-    shadowOpacity: 0.8,
-    shadowRadius: 2,
-    shadowOffset: {
-      height: 1,
-      width: 1,
-    },
-  },
-  itemExtrato: {
-    backgroundColor: '#fff',
-    borderWidth: 1,
-    borderColor: '#305F95',
-    height: 90,
-    width: 147,
-    borderRadius: 8,
-    paddingTop: 20,
-    margin: 10,
-    alignItems: 'center',
-    justifyContent: 'center',
-    textAlign: 'center',
-    shadowColor: '#000',
-    shadowOpacity: 0.8,
-    shadowRadius: 2,
-    shadowOffset: {
-      height: 1,
-      width: 1,
-    },
-  },
-  itemFundoReserva: {
-    backgroundColor: '#fff',
-    borderWidth: 1,
-    borderColor: '#305F95',
-    height: 90,
-    width: 147,
-    borderRadius: 8,
-    paddingTop: 20,
-    margin: 10,
-    alignItems: 'center',
-    justifyContent: 'center',
-    textAlign: 'center',
-    shadowColor: '#000',
-    shadowOpacity: 0.8,
-    shadowRadius: 2,
-    shadowOffset: {
-      height: 1,
-      width: 1,
-    },
-  },
-  itemCashBack: {
-    backgroundColor: '#FE6C6D',
-    borderWidth: 1,
-    borderColor: '#FE6C6D',
-    height: 90,
-    width: 147,
-    borderRadius: 8,
-    paddingTop: 20,
-    margin: 10,
-    alignItems: 'center',
-    justifyContent: 'center',
-    textAlign: 'center',
-    shadowColor: '#000',
-    shadowOpacity: 0.8,
-    shadowRadius: 2,
-    shadowOffset: {
-      height: 1,
-      width: 1,
-    },
-  },
 
   selectedItem: {
     borderColor: '#34CB79',
@@ -291,6 +208,8 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     color: '#305F95',
+    flexWrap: 'wrap',
+    alignItems: 'flex-start',
   },
   itemTitleSaldoCashBack: {
     fontSize: 15,

@@ -29,17 +29,14 @@ const Home = () => {
 
   return (
     <>
-      <View style={{flex: 1}}>
+      <View>
         <GeneralStatusBarColor
           backgroundColor="#305F95"
           barStyle="light-content"
         />
-        <Header titulo={"Olá, Confeitaria Marisa"}/>
+        <Header titulo={'Olá, Confeitaria Marisa'} />
       </View>
       <SafeAreaView>
-        <TouchableOpacity onPress={handleNavigateBack}>
-          <FeatherIcon name="arrow-left" size={20} color="#34cb79" />
-        </TouchableOpacity>
         <ScrollView
           contentInsetAdjustmentBehavior="automatic"
           style={styles.scrollView}>
@@ -51,62 +48,114 @@ const Home = () => {
                 alignContent: 'center',
               }}>
               <TouchableOpacity
-                style={styles.itemSaldoDisponivel}
+                style={[styles.itemSaldoDisponivel]}
                 onPress={() => handleNavigate()}
                 activeOpacity={0.6}>
+                <View
+                  style={{
+                    justifyContent: 'flex-end',
+                    alignContent: 'flex-end',
+                    flexDirection: 'row',
+                    width: '100%',
+                  }}>
+                  <Image
+                    source={require('../../assets/icons/visibility_off_24px_outlined.png')}
+                  />
+                </View>
                 <Text style={styles.itemTitleSaldoCashBack}>
                   Saldo Disponível
                 </Text>
+                <Text
+                  style={[styles.itemTitleSaldoCashBack, {color: '#B5D3AA'}]}>
+                  R$ 250.000,00
+                </Text>
               </TouchableOpacity>
               <TouchableOpacity
-                style={[
-                  styles.itemExtrato /*,
-                  selectedItems.includes(item.id) ? styles.selectedItem : {},*/,
-                ]}
+                style={[styles.itemExtrato]}
                 onPress={() => handleNavigate()}
                 activeOpacity={0.6}>
-                {/* <SvgUri width={42} height={42} uri={item.image_url}></SvgUri> */}
+                <View
+                  style={{
+                    justifyContent: 'flex-end',
+                    alignContent: 'flex-end',
+                    flexDirection: 'row',
+                    width: '100%',
+                  }}>
+                  <Image
+                    source={require('../../assets/icons/extrato_grafos.png')}
+                  />
+                </View>
                 <Text style={styles.itemTitleSecond}>Extrato</Text>
+                {/* <View>
+                  <Image source={require('')}/>
+                  <View>
+                    <Text style={{fontSize:7}}>Receita * nov</Text>
+                    <Text style={{fontSize:7}}>R$ 40.000,00</Text>
+                    <Text style={{fontSize:7}}>Despesa * nov</Text>
+                    <Text style={{fontSize:7}}>R$ 45.000,00</Text>
+                  </View>
+                </View> */}
               </TouchableOpacity>
+
               <TouchableOpacity
-                style={[
-                  styles.item /*,
-                  selectedItems.includes(item.id) ? styles.selectedItem : {},*/,
-                ]}
+                style={[styles.item]}
                 onPress={() => handleNavigate()}
                 activeOpacity={0.6}>
-                {/* <SvgUri width={42} height={42} uri={item.image_url}></SvgUri> */}
+                <View
+                  style={{
+                    justifyContent: 'flex-end',
+                    alignContent: 'flex-end',
+                    flexDirection: 'row',
+                    width: '100%',
+                  }}>
+                  <Image source={require('../../assets/icons/pix.png')} />
+                </View>
                 <Text style={styles.itemTitle}>Pix</Text>
               </TouchableOpacity>
               <TouchableOpacity
-                style={[
-                  styles.item /*,
-                  selectedItems.includes(item.id) ? styles.selectedItem : {},*/,
-                ]}
+                style={[styles.item]}
                 onPress={() => handleNavigate()}
                 activeOpacity={0.6}>
-                {/* <SvgUri width={42} height={42} uri={item.image_url}></SvgUri> */}
+                <View
+                  style={{
+                    justifyContent: 'flex-end',
+                    alignContent: 'flex-end',
+                    flexDirection: 'row',
+                    width: '100%',
+                  }}>
+                  <Image source={require('../../assets/icons/pagarconta.png')} />
+                </View>
                 <Text style={styles.itemTitle}>Pagar Conta</Text>
               </TouchableOpacity>
               <TouchableOpacity
-                style={[
-                  styles.item /*,
-                  selectedItems.includes(item.id) ? styles.selectedItem : {},*/,
-                ]}
+                style={[styles.item]}
                 onPress={() => handleNavigate()}
                 activeOpacity={0.6}>
-                {/* <SvgUri width={42} height={42} uri={item.image_url}></SvgUri> */}
+                <View
+                  style={{
+                    justifyContent: 'flex-end',
+                    alignContent: 'flex-end',
+                    flexDirection: 'row',
+                    width: '100%',
+                  }}>
+                  <Image source={require('../../assets/icons/depositar.png')} />
+                </View>
                 <Text style={styles.itemTitle}>Depositar</Text>
               </TouchableOpacity>
               <TouchableOpacity
-                style={[
-                  styles.item /*,
-                  selectedItems.includes(item.id) ? styles.selectedItem : {},*/,
-                ]}
+                style={[styles.item]}
                 onPress={() => handleNavigate()}
                 activeOpacity={0.6}>
-                {/* <SvgUri width={42} height={42} uri={item.image_url}></SvgUri> */}
-                <Text style={styles.itemTitle}>Crédito Digital</Text>
+                <View
+                  style={{
+                    justifyContent: 'flex-end',
+                    alignContent: 'flex-end',
+                    flexDirection: 'row',
+                    width: '100%',
+                  }}>
+                  <Image source={require('../../assets/icons/credito_digital.png')} />
+                </View>
+                <Text style={styles.itemTitle}>Credito Digital</Text>
               </TouchableOpacity>
             </View>
             <View
@@ -115,64 +164,98 @@ const Home = () => {
                 justifyContent: 'center',
                 alignContent: 'center',
               }}>
-              <TouchableOpacity
-                style={[
-                  styles.itemCashBack /*,
-                  selectedItems.includes(item.id) ? styles.selectedItem : {},*/,
-                ]}
+               <TouchableOpacity
+                style={[styles.itemCashBack]}
                 onPress={() => handleNavigate()}
                 activeOpacity={0.6}>
-                {/* <SvgUri width={42} height={42} uri={item.image_url}></SvgUri> */}
+                <View
+                  style={{
+                    justifyContent: 'flex-end',
+                    alignContent: 'flex-end',
+                    flexDirection: 'row',
+                    width: '100%',
+                  }}>
+                  <Image source={require('../../assets/icons/visibility_off_24px_outlined.png')} />
+                </View>
                 <Text style={styles.itemTitleSaldoCashBack}>Cash Back</Text>
+                <Text
+                  style={[styles.itemTitleSaldoCashBack, {color: '#B5D3AA'}]}>
+                  R$ 5.000,00
+                </Text>
               </TouchableOpacity>
               <TouchableOpacity
-                style={[
-                  styles.itemFundoReserva /*,
-                  selectedItems.includes(item.id) ? styles.selectedItem : {},*/,
-                ]}
+                style={[styles.itemFundoReserva]}
                 onPress={() => handleNavigate()}
                 activeOpacity={0.6}>
-                {/* <SvgUri width={42} height={42} uri={item.image_url}></SvgUri> */}
+                <View
+                  style={{
+                    justifyContent: 'flex-end',
+                    alignContent: 'flex-end',
+                    flexDirection: 'row',
+                    width: '100%',
+                  }}>
+                  <Image source={require('../../assets/icons/folhapagamento.png')} />
+                </View>
                 <Text style={styles.itemTitleSecond}>Fundo de Reserva</Text>
               </TouchableOpacity>
               <TouchableOpacity
-                style={[
-                  styles.item /*,
-                  selectedItems.includes(item.id) ? styles.selectedItem : {},*/,
-                ]}
+                style={[styles.item]}
                 onPress={() => handleNavigate()}
                 activeOpacity={0.6}>
-                {/* <SvgUri width={42} height={42} uri={item.image_url}></SvgUri> */}
+                <View
+                  style={{
+                    justifyContent: 'flex-end',
+                    alignContent: 'flex-end',
+                    flexDirection: 'row',
+                    width: '100%',
+                  }}>
+                  <Image source={require('../../assets/icons/transferencia.png')} />
+                </View>
                 <Text style={styles.itemTitle}>Transferência</Text>
               </TouchableOpacity>
               <TouchableOpacity
-                style={[
-                  styles.item /*,
-                  selectedItems.includes(item.id) ? styles.selectedItem : {},*/,
-                ]}
+                style={[styles.item]}
                 onPress={() => handleNavigate()}
                 activeOpacity={0.6}>
-                {/* <SvgUri width={42} height={42} uri={item.image_url}></SvgUri> */}
+                <View
+                  style={{
+                    justifyContent: 'flex-end',
+                    alignContent: 'flex-end',
+                    flexDirection: 'row',
+                    width: '100%',
+                  }}>
+                  <Image source={require('../../assets/icons/cobranca.png')} />
+                </View>
                 <Text style={styles.itemTitle}>Cobrança</Text>
               </TouchableOpacity>
               <TouchableOpacity
-                style={[
-                  styles.item /*,
-                  selectedItems.includes(item.id) ? styles.selectedItem : {},*/,
-                ]}
+                style={[styles.item]}
                 onPress={() => handleNavigate()}
                 activeOpacity={0.6}>
-                {/* <SvgUri width={42} height={42} uri={item.image_url}></SvgUri> */}
+                <View
+                  style={{
+                    justifyContent: 'flex-end',
+                    alignContent: 'flex-end',
+                    flexDirection: 'row',
+                    width: '100%',
+                  }}>
+                  <Image source={require('../../assets/icons/comprovantes.png')} />
+                </View>
                 <Text style={styles.itemTitle}>Comprovantes</Text>
               </TouchableOpacity>
               <TouchableOpacity
-                style={[
-                  styles.item /*,
-                  selectedItems.includes(item.id) ? styles.selectedItem : {},*/,
-                ]}
+                style={[styles.item]}
                 onPress={() => handleNavigate()}
                 activeOpacity={0.6}>
-                {/* <SvgUri width={42} height={42} uri={item.image_url}></SvgUri> */}
+                <View
+                  style={{
+                    justifyContent: 'flex-end',
+                    alignContent: 'flex-end',
+                    flexDirection: 'row',
+                    width: '100%',
+                  }}>
+                  <Image source={require('../../assets/icons/utilidades.png')} />
+                </View>
                 <Text style={styles.itemTitle}>Utilidades</Text>
               </TouchableOpacity>
             </View>
@@ -241,12 +324,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     textAlign: 'center',
     shadowColor: '#000',
-    shadowOpacity: 0.8,
-    shadowRadius: 2,
-    shadowOffset: {
-      height: 1,
-      width: 1,
-    },
+    shadowOffset: {width: 1, height: 1},
+    shadowOpacity: 0.4,
+    shadowRadius: 3,
+    elevation: 10,
+    paddingHorizontal: 10,
+    paddingVertical: 15,
+    flexDirection: 'column',
   },
   itemSaldoDisponivel: {
     backgroundColor: '#305F95',
@@ -261,12 +345,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     textAlign: 'center',
     shadowColor: '#000',
-    shadowOpacity: 0.8,
-    shadowRadius: 2,
-    shadowOffset: {
-      height: 1,
-      width: 1,
-    },
+    shadowOffset: {width: 1, height: 1},
+    shadowOpacity: 0.4,
+    shadowRadius: 3,
+    elevation: 10,
+    paddingHorizontal: 10,
+    paddingVertical: 15,
+    flexDirection: 'column',
   },
   itemExtrato: {
     backgroundColor: '#fff',
@@ -281,12 +366,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     textAlign: 'center',
     shadowColor: '#000',
-    shadowOpacity: 0.8,
-    shadowRadius: 2,
-    shadowOffset: {
-      height: 1,
-      width: 1,
-    },
+    shadowOffset: {width: 1, height: 1},
+    shadowOpacity: 0.4,
+    shadowRadius: 3,
+    elevation: 10,
+    paddingHorizontal: 10,
+    paddingVertical: 15,
+    flexDirection: 'column',
   },
   itemFundoReserva: {
     backgroundColor: '#fff',
@@ -301,12 +387,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     textAlign: 'center',
     shadowColor: '#000',
-    shadowOpacity: 0.8,
-    shadowRadius: 2,
-    shadowOffset: {
-      height: 1,
-      width: 1,
-    },
+    shadowOffset: {width: 1, height: 1},
+    shadowOpacity: 0.4,
+    shadowRadius: 3,
+    elevation: 10,
+    paddingHorizontal: 10,
+    paddingVertical: 15,
+    flexDirection: 'column',
   },
   itemCashBack: {
     backgroundColor: '#FE6C6D',
@@ -321,12 +408,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     textAlign: 'center',
     shadowColor: '#000',
-    shadowOpacity: 0.8,
-    shadowRadius: 2,
-    shadowOffset: {
-      height: 1,
-      width: 1,
-    },
+    shadowOffset: {width: 1, height: 1},
+    shadowOpacity: 0.4,
+    shadowRadius: 3,
+    elevation: 10,
+    paddingHorizontal: 10,
+    paddingVertical: 15,
+    flexDirection: 'column',
   },
 
   selectedItem: {

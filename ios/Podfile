@@ -12,6 +12,8 @@ target 'linkerplus2' do
 
   pod 'RNCPicker', :path => '../node_modules/@react-native-picker/picker'
 
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
   target 'linkerplus2Tests' do
     inherit! :complete
     # Pods for testing
