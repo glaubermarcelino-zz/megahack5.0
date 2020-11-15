@@ -1,6 +1,5 @@
 # Mega Hack 5.0 - Desafio Linker
 
-<h1> Linker Plus </h1>
 <h3 align="center">Desenvolvido para o Desafio Mega Hack 5.0</h3>
 <h3 align="center">É um aplicativo com o intuito de sanar as maiores dores tanto do cliente (empreendedores) quando do fornecedor</h3>
 
