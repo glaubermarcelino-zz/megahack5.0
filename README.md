@@ -8,7 +8,7 @@
   <img alt="Tamanho do repositório" src="https://img.shields.io/github/repo-size/glaubermarcelino/megahack5.0">
   
   <a href="https://www.instagram.com/ian_1408/">
-    <img alt="Feito por Glauber Marcelino da Silva" src="https://img.shields.io/badge/made%20by-Ian%20Torquato-%2304D361">
+    <img alt="Feito por Glauber Marcelino da Silva" src="https://img.shields.io/badge/made%20by-Glauber%20Marcelino-%2304D361">
   </a>
   
   <a href="https://github.com/IanTorquato/Happy-Rocketseat-NLW/search?l=typescript">
