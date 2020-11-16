@@ -185,7 +185,7 @@ const Home = () => {
               </TouchableOpacity>
               <TouchableOpacity
                 style={[styles.itemFundoReserva]}
-                onPress={() => handleNavigate()}
+                onPress={() => navigation.navigate("FundoReserva")}
                 activeOpacity={0.6}>
                 <View
                   style={{

@@ -63,6 +63,23 @@ const Credito = () => {
                 </View>
                 <Text style={styles.itemTitle}>Capital de Giro</Text>
               </TouchableOpacity>
+              <TouchableOpacity
+                style={[styles.item]}
+                onPress={() => navigation.navigate('Cartoes')}
+                activeOpacity={0.6}>
+                <View
+                  style={{
+                    justifyContent: 'flex-end',
+                    alignContent: 'flex-end',
+                    flexDirection: 'row',
+                    width: '100%',
+                  }}>
+                  <Image
+                    source={require('../../assets/icons/adiantamento.png')}
+                  />
+                </View>
+                <Text style={styles.itemTitle}>Mais</Text>
+              </TouchableOpacity>
             </View>
             <View
               style={{
@@ -86,6 +103,23 @@ const Credito = () => {
                   />
                 </View>
                 <Text style={styles.itemTitle}>Adiantamento de Recebíveis</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={[styles.item]}
+                onPress={() => navigation.navigate('Cartoes')}
+                activeOpacity={0.6}>
+                <View
+                  style={{
+                    justifyContent: 'flex-end',
+                    alignContent: 'flex-end',
+                    flexDirection: 'row',
+                    width: '100%',
+                  }}>
+                  <Image
+                    source={require('../../assets/icons/adiantamento.png')}
+                  />
+                </View>
+                <Text style={styles.itemTitle}>Cartões</Text>
               </TouchableOpacity>
             </View>
           </View>

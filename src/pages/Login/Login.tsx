@@ -36,6 +36,7 @@ const Login = (props: any) => {
             <Text style={styles.label}>CNPJ</Text>
             <TextInput
               style={styles.input}
+              keyboardType="default"
               value={props.values.cnpj}
               onChangeText={(text) => props.setFieldValue('cnpj', text)}
             />

@@ -1,97 +1,142 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {
+  SafeAreaView,
+  StyleSheet,
+  ScrollView,
   View,
   Image,
-  Text,
-  StyleSheet,
-  StatusBar,
-  Linking,
   TouchableOpacity,
+  Text,
+  Alert,
 } from 'react-native';
+import GeneralStatusBarColor from '../../components/StatusbarColor/Index';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
+import {Icon} from 'react-native-elements';
+import Header from '../../components/Header/Index';
 
-const FundoReserva: React.FC = (props: any) => {
-  //Oculta a barra de status
-  StatusBar.setHidden(true);
+const FundoReserva = () => {
+  function handleNavigateBack() {
+    Alert.alert('Oooops...', 'Funcionalidade de retorno acionada');
+  }
+  function handleNavigate() {
+    Alert.alert('Oooops...', 'Funcionalidade de retorno acionada');
+  }
   return (
-    <View style={styles.container}>
+    <>
       <View>
-        <Text
-          style={{
-            color: '#5F628C',
-            textAlign: 'center',
-            fontSize: 16,
-            fontWeight: 'bold',
-            marginBottom: 30,
-          }}>
-          Abra sua conta
-        </Text>
-        <View>
-          <Text
-            style={{
-              color: '#FE6C6D',
-              fontSize: 20,
-              letterSpacing: 2,
-              fontWeight: 'bold',
-              textAlign: 'center',
-            }}>
-            Código de Verificação
-          </Text>
-          <Text
-            style={{
-              color: '#63628B',
-              fontSize: 15,
-              letterSpacing: 2,
-              textAlign: 'center',
-            }}>
-            Foi enviado um código de verificação
-          </Text>
-          <Text
-            style={{
-              color: '#63628B',
-              fontSize: 15,
-              letterSpacing: 2,
-              textAlign: 'center',
-            }}>
-            para (21) 7070-7070
-          </Text>
-        </View>
-        <Text
-          style={{
-            color: '#092058',
-            fontSize: 35,
-            letterSpacing: 2,
-            textAlign: 'center',
-          }}></Text>
-        <View style={styles.content}>
-          <View>
-            <TouchableOpacity
-              style={styles.item}
-              onPress={() => {}}
-              activeOpacity={0.6}>
-              <Text style={styles.itemTitle}>Comprar Novo Forno</Text>
-            </TouchableOpacity>
-          </View>
-          <View>
-            <TouchableOpacity
-              style={styles.item}
-              onPress={() => {}}
-              activeOpacity={0.6}>
-              <Text style={styles.itemTitle}>Criar um novo Fundo</Text>
-            </TouchableOpacity>
-          </View>
-        </View>
+        <GeneralStatusBarColor
+          backgroundColor="#305F95"
+          barStyle="light-content"
+        />
+        <Header titulo={'Olá, Confeitaria Marisa'} />
       </View>
-    </View>
+      <SafeAreaView>
+        <TouchableOpacity
+          onPress={() => handleNavigateBack()}
+          style={{alignItems: 'flex-start', justifyContent: 'center'}}>
+          <Text style={{fontSize: 16, color: '#305F95', fontWeight: 'bold'}}>
+            <Icon name="g-translate" color="#00aced" />
+            Fundo Reserva
+          </Text>
+        </TouchableOpacity>
+        <ScrollView
+          contentInsetAdjustmentBehavior="automatic"
+          style={styles.scrollView}>
+            <View>
+              <View>
+                <View
+                  style={{
+                    justifyContent: 'flex-end',
+                    alignContent: 'flex-end',
+                    flexDirection: 'row',
+                    width: '100%',
+                  }}>
+                  <Image source={require('../../assets/icons/visibility_off_24px_outlined.png')} />
+                </View>
+                <Text style={{color:'#305F95',fontWeight:'bold',marginLeft:30}}>Você tem:</Text>
+                <Text
+                  style={[styles.itemTitleSaldoCashBack, {color: '#FE6C6D',fontSize:25,textAlign:'left',marginLeft:30}]}>
+                  R$ 60.700,00
+                </Text>
+              </View>
+              <View
+                  style={{
+                    justifyContent: 'flex-end',
+                    alignContent: 'flex-end',
+                    flexDirection: 'row',
+                    width: '100%',
+                  }}>
+                  <Image source={require('../../assets/icons/visibility_off_24px_outlined.png')} />
+                </View>
+                <Text style={{color:'#305F95',fontWeight:'bold',marginLeft:30}}>Seu dinheiro Rendeu</Text>
+                <Text
+                  style={[styles.itemTitleSaldoCashBack, {color: '#FE6C6D',fontSize:25,textAlign:'left',marginLeft:30}]}>
+                  R$ 700,00
+                </Text>
+            </View>
+          <View style={styles.servicos}>
+            <View
+              style={{
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignContent: 'center',
+              }}>
+              <View style={{overflow: 'hidden', paddingBottom: 2}}>
+                <TouchableOpacity
+                  style={[styles.item]}
+                  onPress={() => handleNavigate()}
+                  activeOpacity={0.6}>
+                  <View
+                    style={{
+                      justifyContent: 'flex-end',
+                      alignContent: 'flex-end',
+                      flexDirection: 'row',
+                      width: '100%',
+                    }}>
+                    <Image
+                      source={require('../../assets/icons/leitor.png')}
+                    />
+                  </View>
+                  <Text style={styles.itemTitle}>Comprar Novo Forno</Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+            <View
+              style={{
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignContent: 'center',
+              }}>
+              <View style={{overflow: 'hidden', paddingBottom: 2}}>
+                <TouchableOpacity
+                  style={[styles.item]}
+                  onPress={() => handleNavigate()}
+                  activeOpacity={0.6}>
+                  <View
+                    style={{
+                      justifyContent: 'flex-end',
+                      alignContent: 'flex-end',
+                      flexDirection: 'row',
+                      width: '100%',
+                    }}>
+                    <Image
+                      source={require('../../assets/icons/leitor.png')}
+                    />
+                  </View>
+                  <Text style={styles.itemTitle}>Criar um novo fundo</Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+          </View>
+        </ScrollView>
+      </SafeAreaView>
+    </>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 10,
-    height: '100%',
+  scrollView: {
+    backgroundColor: Colors.lighter,
   },
   item: {
     backgroundColor: '#fff',
@@ -102,23 +147,94 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     paddingTop: 20,
     margin: 10,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: 'flex-start',
+    justifyContent: 'space-between',
     textAlign: 'center',
     shadowColor: '#000',
-    shadowOpacity: 0.8,
-    shadowRadius: 2,
-    shadowOffset: {
-      height: 1,
-      width: 1,
-    },
+    shadowOffset: {width: 1, height: 1},
+    shadowOpacity: 0.4,
+    shadowRadius: 3,
+    elevation: 10,
+    paddingHorizontal: 10,
+    paddingVertical: 15,
+    flexDirection: 'column',
   },
-  content: {},
+  servicos: {
+    justifyContent: 'center',
+    flexDirection: 'row',
+    backgroundColor: '#fff',
+  },
+  engine: {
+    position: 'absolute',
+    right: 0,
+  },
+  body: {
+    backgroundColor: Colors.white,
+  },
+  sectionContainer: {
+    marginTop: 32,
+    paddingHorizontal: 24,
+  },
+  sectionTitle: {
+    fontSize: 24,
+    fontWeight: '600',
+    color: Colors.black,
+  },
+  sectionDescription: {
+    marginTop: 8,
+    fontSize: 18,
+    fontWeight: '400',
+    color: Colors.dark,
+  },
+  highlight: {
+    fontWeight: '700',
+  },
+  container: {
+    flexDirection: 'column',
+    justifyContent: 'center',
+    padding: 0,
+  },
+  welcome: {color: '#305F95', fontSize: 16, margin: 10, fontWeight: 'bold'},
+  instructions: {},
+  logo: {
+    justifyContent: 'flex-end',
+    width: 94,
+    height: 40,
+  },
+
+  selectedItem: {
+    borderColor: '#34CB79',
+    borderWidth: 2,
+  },
+
   itemTitle: {
     fontSize: 15,
     fontWeight: 'bold',
     textAlign: 'center',
     color: '#305F95',
+    flexWrap: 'wrap',
+    alignItems: 'flex-start',
+  },
+  itemTitleSaldoCashBack: {
+    fontSize: 15,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    color: '#fff',
+  },
+  itemTitleSecond: {
+    fontSize: 11,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    color: '#979797',
+  },
+  footer: {
+    color: Colors.dark,
+    fontSize: 12,
+    fontWeight: '600',
+    padding: 4,
+    paddingRight: 12,
+    textAlign: 'right',
   },
 });
+
 export default FundoReserva;

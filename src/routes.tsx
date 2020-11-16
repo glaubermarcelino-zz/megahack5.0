@@ -41,11 +41,11 @@ const Routes = () => {
         <AppStack.Screen name="Pagamentos" component={Pagamentos} />
         <AppStack.Screen name="CapitalGiro" component={CapitalGiro} />
          <AppStack.Screen name="Credito" component={Credito} />
+        <AppStack.Screen name="FundoReserva" component={FundoReserva} /> 
       {/*<AppStack.Screen name="Vantagens" component={Vantagens} />
         {/* <AppStack.Screen name="Investimentos" component={Investimentos} />
         <AppStack.Screen name="Notificacoes" component={Notificacoes} />
-        <AppStack.Screen name="Perfil" component={Perfil} />
-        <AppStack.Screen name="FundoReserva" component={FundoReserva} /> */}
+        <AppStack.Screen name="Perfil" component={Perfil} />*/}
       </AppStack.Navigator>
     </NavigationContainer>
   );
