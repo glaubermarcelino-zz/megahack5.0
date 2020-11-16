@@ -9,16 +9,15 @@ import {
   Text,
   Alert,
 } from 'react-native';
-// import { SvgUri } from "react-native-svg";
 import GeneralStatusBarColor from '../../components/StatusbarColor/Index';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
-// import {useNavigation} from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 import Header from '../../components/Header/Index';
 
 const CapitalGiro = () => {
   const [selectedItems, setselectedItems] = useState<number[]>([]);
-  // const navigation = useNavigation();
+   const navigation = useNavigation();
 
   function handleNavigateBack() {
     Alert.alert('Oooops...', 'Funcionalidade de retorno acionada');

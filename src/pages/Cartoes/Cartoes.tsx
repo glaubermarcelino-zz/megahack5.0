@@ -6,15 +6,15 @@ import CreditCardDisplay from 'react-native-credit-card-display';
 // import Tabbar from '../../components/TabBar/Tabbar';
 import {Picker} from '@react-native-picker/picker';
 import {TouchableOpacity} from 'react-native-gesture-handler';
-import {
-  LineChart,
-  Line,
-  CartesianGrid,
-  XAxis,
-  YAxis,
-  Tooltip,
-  Legend,
-} from 'recharts';
+// import {
+//   LineChart,
+//   Line,
+//   CartesianGrid,
+//   XAxis,
+//   YAxis,
+//   Tooltip,
+//   Legend,
+// } from 'recharts';
 import ProgressCircle from 'react-native-progress-circle';
 
 
@@ -93,16 +93,16 @@ const Cartoes = () => {
       date: '10 novembro,2020',
     },
   ];
-  const Item = (props:ItemProps) => (
-    <View style={styles.item}>
-      <Image source={require(props.img)}/>
-      <Text style={styles.title}>{props.title}</Text>
-      <Text style={styles.title}>{props.date}</Text>
-    </View>
-  );
-  const renderItem = (item:ItemProps) => 
-      listTransacoes.map((trans)=>
-          {<Item key={trans.id} title={trans.title} date={trans.date} img={trans.img} id={trans.id}/>});
+  // const Item = (props:ItemProps) => (
+  //   <View style={styles.item}>
+  //     <Image source={require(props.img)}/>
+  //     <Text style={styles.title}>{props.title}</Text>
+  //     <Text style={styles.title}>{props.date}</Text>
+  //   </View>
+  // );
+  // const renderItem = (item:ItemProps) => 
+  //     listTransacoes.map((trans)=>
+  //         {<Item key={trans.id} title={trans.title} date={trans.date} img={trans.img} id={trans.id}/>});
   return (
     <View style={{flex: 1}}>
       <GeneralStatusBarColor

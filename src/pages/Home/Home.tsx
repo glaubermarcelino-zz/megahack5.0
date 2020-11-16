@@ -12,13 +12,13 @@ import {
 // import { SvgUri } from "react-native-svg";
 import GeneralStatusBarColor from '../../components/StatusbarColor/Index';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
-// import {useNavigation} from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 import Header from '../../components/Header/Index';
 
 const Home = () => {
   const [selectedItems, setselectedItems] = useState<number[]>([]);
-  // const navigation = useNavigation();
+  const navigation = useNavigation();
 
   function handleNavigateBack() {
     Alert.alert('Oooops...', 'Funcionalidade de retorno acionada');
@@ -49,7 +49,7 @@ const Home = () => {
               }}>
               <TouchableOpacity
                 style={[styles.itemSaldoDisponivel]}
-                onPress={() => handleNavigate()}
+                // onPress={() => handleNavigate()}
                 activeOpacity={0.6}>
                 <View
                   style={{
@@ -114,7 +114,7 @@ const Home = () => {
               </TouchableOpacity>
               <TouchableOpacity
                 style={[styles.item]}
-                onPress={() => handleNavigate()}
+                onPress={() => navigation.navigate("Pagamentos")}
                 activeOpacity={0.6}>
                 <View
                   style={{
@@ -144,7 +144,7 @@ const Home = () => {
               </TouchableOpacity>
               <TouchableOpacity
                 style={[styles.item]}
-                onPress={() => handleNavigate()}
+                onPress={() => navigation.navigate("Credito")}
                 activeOpacity={0.6}>
                 <View
                   style={{
@@ -245,7 +245,7 @@ const Home = () => {
               </TouchableOpacity>
               <TouchableOpacity
                 style={[styles.item]}
-                onPress={() => handleNavigate()}
+                onPress={() => navigation.navigate("Utilidades")}
                 activeOpacity={0.6}>
                 <View
                   style={{

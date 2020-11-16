@@ -49,8 +49,8 @@ const Login = (props: any) => {
             <Text style={styles.avisoSenha}>Esqueceu sua senha?</Text>
             <RectButton
               style={styles.button}
-              onPress={props.handleSubmit}>
-               {/* onPress={() => handleNavigateToHome()}> */}
+              // onPress={props.handleSubmit}>
+               onPress={() => handleNavigateToHome()}>
               <Text style={styles.buttonText}>Continuar</Text>
             </RectButton>
             <View style={styles.criarConta}>

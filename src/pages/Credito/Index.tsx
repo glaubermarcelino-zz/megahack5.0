@@ -13,14 +13,11 @@ import GeneralStatusBarColor from '../../components/StatusbarColor/Index';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import {Icon} from 'react-native-elements';
 import Header from '../../components/Header/Index';
+import {useNavigation} from '@react-navigation/native';
 
 const Credito = () => {
-  function handleNavigateBack() {
-    Alert.alert('Oooops...', 'Funcionalidade de retorno acionada');
-  }
-  function handleNavigate() {
-    Alert.alert('Oooops...', 'Funcionalidade de retorno acionada');
-  }
+  const navigation = useNavigation();
+
   return (
     <>
       <View>
@@ -32,7 +29,7 @@ const Credito = () => {
       </View>
       <SafeAreaView>
         <TouchableOpacity
-          onPress={() => handleNavigateBack()}
+          onPress={() => navigation.goBack()}
           style={{alignItems: 'flex-start', justifyContent: 'center'}}>
           <Text style={{fontSize: 16, color: '#305F95', fontWeight: 'bold'}}>
             <Icon name="g-translate" color="#00aced" />
@@ -51,7 +48,7 @@ const Credito = () => {
               }}>
               <TouchableOpacity
                 style={[styles.item]}
-                onPress={() => handleNavigate()}
+                onPress={() => navigation.navigate('CapitalGiro')}
                 activeOpacity={0.6}>
                 <View
                   style={{
@@ -60,11 +57,12 @@ const Credito = () => {
                     flexDirection: 'row',
                     width: '100%',
                   }}>
-                  <Image source={require('../../assets/icons/capitalgiro.png')} />
+                  <Image
+                    source={require('../../assets/icons/capitalgiro.png')}
+                  />
                 </View>
                 <Text style={styles.itemTitle}>Capital de Giro</Text>
               </TouchableOpacity>
-              
             </View>
             <View
               style={{
@@ -74,7 +72,7 @@ const Credito = () => {
               }}>
               <TouchableOpacity
                 style={[styles.item]}
-                onPress={() => handleNavigate()}
+                onPress={() => {}}
                 activeOpacity={0.6}>
                 <View
                   style={{
@@ -83,7 +81,9 @@ const Credito = () => {
                     flexDirection: 'row',
                     width: '100%',
                   }}>
-                  <Image source={require('../../assets/icons/adiantamento.png')} />
+                  <Image
+                    source={require('../../assets/icons/adiantamento.png')}
+                  />
                 </View>
                 <Text style={styles.itemTitle}>Adiantamento de Recebíveis</Text>
               </TouchableOpacity>
