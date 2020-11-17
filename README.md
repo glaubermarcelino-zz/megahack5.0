@@ -21,7 +21,7 @@
   </a>
 </p>
 
-<p align="center"> <img src="https://github.com/glaubermarcelino/megahack5.0/blob/main/screens/Linker%2B.gif?raw=true" alt="Linker+" /> </p>
+<p align="center"> <img src="https://github.com/glaubermarcelino/megahack5.0/blob/main/screens/Gif-Linker-Plus.gif?raw=true" alt="Linker+" /> </p>
 
 
 ### `Clone this project`
