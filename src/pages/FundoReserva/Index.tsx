@@ -16,10 +16,10 @@ import Header from '../../components/Header/Index';
 
 const FundoReserva = () => {
   function handleNavigateBack() {
-    Alert.alert('Oooops...', 'Funcionalidade de retorno acionada');
+    
   }
   function handleNavigate() {
-    Alert.alert('Oooops...', 'Funcionalidade de retorno acionada');
+    Alert.alert('Aviso', 'Serviço indisponível no momento, tente mais tarde');
   }
   return (
     <>
